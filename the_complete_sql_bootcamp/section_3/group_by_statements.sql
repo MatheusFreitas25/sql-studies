@@ -1,4 +1,6 @@
+------------------------------------------------------------------------------
 --MOST COMMON AGGREGATE FUNCTIONS: AVG(), COUNT(), MAX(), MIN(), SUM()
+------------------------------------------------------------------------------
 
 SELECT AVG(replacement_cost) FROM film
 
@@ -12,8 +14,10 @@ SELECT MIN(replacement_cost) FROM film
 
 SELECT SUM(replacement_cost) FROM film
 
-
+------------------------------------------------------------------------------
 --GROUP BY -> ALLOWS US TO AGGREGATE COLUMNS PER SOME CATEGORY
+------------------------------------------------------------------------------
+
 SELECT staff_id, customer_id, SUM(amount) AS sum_amount
 FROM payment
 GROUP BY staff_id, customer_id
@@ -24,8 +28,10 @@ FROM payment
 GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC
 
+------------------------------------------------------------------------------
 --HAVING -> FILTER AFTER AN AGG HAS ALREADY TAKEN PLACE
 --WE CAN'T USE WHERE TO FILTER BASED OFF OF AGG RESULTS, BECAUSE THOSE HAPPEN AFTER A WHERE IS EXECUTED
+------------------------------------------------------------------------------
 
 SELECT company, SUM(sales)
 FROM finance_table
